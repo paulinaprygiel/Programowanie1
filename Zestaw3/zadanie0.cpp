@@ -3,12 +3,12 @@
 
 int main()
 {
-    int n,i;
+    int n = 0;
     std:: cout << "Wprowadz n";
-    std:: cin>> n;
-    for (i=1; i<=n; i++ )
+    std:: cin >> n;
+    for (int i=0; i<=n; i++ )
     {
-        std::cout<<i<< std::endl;
+        std::cout<<i<< " ";
     }
     return 0;
 }
