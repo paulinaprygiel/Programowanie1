@@ -3,32 +3,34 @@
 int main()
 {
 
-    int b, i, j, f;
+    int n; //liczba liczb pierwszych
 
     std:: cout << "wprowadz n";
-    std:: cin >> b;
+    std:: cin >> n;
+    if (n==1)
+        std:: cout << 2;
+    else
+    {
+        --n;
+        std::cout<<2<<"\n";
+        for (int i=3; n>0; i+=2)
+        {
+            bool prime=true;
 
-
-    for (i = 1; i <= b; i++) {
-
-        if (i == 1 || i == 0)
-            continue;
-
-
-        f = 1;
-
-        for (j = 2; j <= i / 2; ++j) {
-            if (i % j == 0)
+            for (int j=2; j*j<=i; j++)
+                if (i%j==0)
+                {
+                    prime=false;
+                    break;
+                }
+            if(prime)
             {
-                f = 0;
-                break;
+                std:: cout<<i<<"\n";
+                --n;
             }
         }
-
-
-        if (f == 1)
-            std:: cout << i << " ";
     }
+
 
     return 0;
 }
