@@ -16,7 +16,7 @@ int main()
         iloczyn = iloczyn * A[i];
     }
 
-    cout<<pow(iloczyn,0.2);
+    cout<<pow(iloczyn,1/5.0);
 
 
 
