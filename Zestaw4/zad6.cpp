@@ -24,13 +24,13 @@ int main()
     {
         m=B[i];
         n=0;
-        for (int j = 0; j<12; j++)
-            if (m==B[j]) n++;
-            if (n>ilosc)
-            {
-               ilosc = n;
-               moda = m;
+        for (int j = 0; j<12; j++) {
+            if (m == B[j]) n++;
+            if (n > ilosc) {
+                ilosc = n;
+                moda = m;
             }
+        }
 
 
     }
