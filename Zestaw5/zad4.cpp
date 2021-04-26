@@ -8,7 +8,6 @@ int main()
     int n = 7;
     int m = 7;
     int a[n][m];
-    int b[m][n];
 
 
     for( int i = 0; i < n; ++i)
@@ -22,18 +21,19 @@ int main()
         std::cout<<'\n';
     }
 
-
     for (int i=0; i < n; i++)
-        for (int j=0; j < m; j++){
-            b[j][i]=a[i][j];
+        for (int j=i+1; j < m; j++){
+            int x = a[i][j];
+            a[i][j]=a[j][i];
+            a[j][i]=x;
     }
     std:: cout << "Macierz po stransponowaniu: "<< std:: endl;
     for (int i=0; i < m; i++)
-        for (int j=0; j < n; j++){
+    {for (int j=0; j < n; j++)
 
-            std:: cout << " "<< b[i][j];
-            if (j==n-1)
-                std:: cout<< std:: endl;
+            std:: cout<< a[i][j]<<'\t';
+    std:: cout<<'\n';
+
         }
 
 
