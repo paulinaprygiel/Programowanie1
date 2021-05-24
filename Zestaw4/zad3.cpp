@@ -1,8 +1,4 @@
-
-
 #include <iostream>
-
-
     int main()
     {
         int A[5],B[5];

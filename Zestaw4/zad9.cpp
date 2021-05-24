@@ -10,19 +10,19 @@ int main()
     cout<<"Podaj koncowa wartosc przedzialu";
     cin>>N;
     bool T[N+1];  //
-    int i,w;
+    int w;
 
     cout << "Liczby pierwsze z tego przedzialu to: ";
 
-    for(i = 2; i <=N; i++) T[i] = true;
+    for(int i = 2; i <=N; i++) T[i] = true;
 
 
-    for(i = 2; i < N; i++)
+    for(int i = 2; i < N; i++)
         for(w = i + i; w <= N; w = w + i) T[w] = false;
 
 
 
-    for(i = 2; i <= N; i++)
+    for(int i = 2; i <= N; i++)
         if(T[i]) cout << i << " ";
 
 
