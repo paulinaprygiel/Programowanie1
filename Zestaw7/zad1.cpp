@@ -43,5 +43,5 @@ int main()
         cout << *(B+i)<<" ";
     }
 
-
+return 0;
 }

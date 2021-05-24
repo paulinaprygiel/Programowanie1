@@ -17,41 +17,41 @@ int main ()
     {
         *(A+i)=rand()%101;
     }
-//    do
-//    {
-//        zamiana=0;
-//        for(int i=0; i!=n; i++)
-//        {
-//            if (*(A+i)>*(A+i+1))
-//            {
-//                zamiana = zamiana +1;
-//                schowek = *(A+i) ;
-//                *(A+i)=*(A+i+1);
-//                *(A+i+1) = schowek;
-//            }
-//        }
-//    }
-//    while (zamiana!=0);
+    do
+    {
+        zamiana=0;
+        for(int i=0; i!=n; i++)
+        {
+            if (*(A+i)>*(A+i+1))
+            {
+                zamiana = zamiana +1;
+                schowek = *(A+i) ;
+                *(A+i)=*(A+i+1);
+                *(A+i+1) = schowek;
+            }
+        }
+    }
+    while (zamiana!=0);
 
     for (int i=0; i<m; i++)
     {
         *(B+i)=rand()%11;
     }
-//    do
-//    {
-//        zamiana=0;
-//        for(int i=0; i!=n; i++)
-//        {
-//            if (*(B+i)>*(B+i+1))
-//            {
-//                zamiana = zamiana +1;
-//                schowek = *(B+i) ;
-//                *(B+i)=*(B+i+1);
-//                *(B+i+1) = schowek;
-//            }
-//        }
-//    }
-//    while (zamiana!=0);
+    do
+    {
+        zamiana=0;
+        for(int i=0; i!=n; i++)
+        {
+            if (*(B+i)>*(B+i+1))
+            {
+                zamiana = zamiana +1;
+                schowek = *(B+i) ;
+                *(B+i)=*(B+i+1);
+                *(B+i+1) = schowek;
+            }
+        }
+    }
+    while (zamiana!=0);
 
     for (int i=0, j=0;i<n||j<m;)
     {
