@@ -1,77 +1,95 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
 int main ()
 {
     int n;
     int m;
     cin >>n>>m;
+    int o = n+m;
     int *A;
     int *B;
     int *C;
     A=new int [n];
     B=new int [m];
-    C=new int [n+m];
-    int zamiana;
-    int schowek;
+    C=new int [o];
+    srand(time(0));
+
+
+
     for (int i=0; i<n; i++)
     {
-        *(A+i)=rand()%101;
+        *(A+i)=rand()%11;
     }
-    do
+
+    cout << endl;
+    cout << "Posortowana tablica A"<<endl;
+   sort(A, A+n);
+
+    for (int i=0; i<n; i++)
     {
-        zamiana=0;
-        for(int i=0; i!=n; i++)
-        {
-            if (*(A+i)>*(A+i+1))
-            {
-                zamiana = zamiana +1;
-                schowek = *(A+i) ;
-                *(A+i)=*(A+i+1);
-                *(A+i+1) = schowek;
-            }
-        }
+        cout <<*(A+i)<< " ";
     }
-    while (zamiana!=0);
 
     for (int i=0; i<m; i++)
     {
         *(B+i)=rand()%11;
     }
-    do
+    cout << endl;
+    sort(B,B+m);
+    cout << "Posortowana tablica B" <<endl;
+    for (int i=0; i<m; i++)
     {
-        zamiana=0;
-        for(int i=0; i!=m; i++)
+        cout <<*(B+i)<< " ";
+    }
+    cout << endl;
+
+    int i=0;
+    int j=0;
+    int k=0;
+    for (; k<o;k++)
+    {
+
+        if(*(A+i)>*(B+j))
         {
-            if (*(B+i)>*(B+i+1))
-            {
-                zamiana = zamiana +1;
-                schowek = *(B+i) ;
-                *(B+i)=*(B+i+1);
-                *(B+i+1) = schowek;
-            }
+            *(C+k)=*(B+j);
+            j++;
         }
-    }
-    while (zamiana!=0);
-
-    for (int i=0, j=0;i<n||j<m;)
-    {
-        if (i == n) {
-            *(C + i + j) = *(B + j++);
-        } else if (j == m) {
-            *(C + i + j) = *(A + i ++);
+        else
+        {
+            *(C+k)=*(A+i);
+            i++;
         }
-        else {
-            if (*(A + i) < *(B + i)) {
-                *(C + i + j) = *(A + i++);
-            } else
-                *(C + i + j) = *(B + j++);
+        if (i>=n || j>=m)
+        {
+            k++;
+            break;
         }
     }
 
-    for (int i=0; i<n+m; i++)
+    while(i<n)
     {
-        cout << *(C+i)<< " ";
+        *(C+k)=*(A+i);
+        i++;
+        k++;
     }
+    while(j<m)
+    {
+        *(C+k)=*(B+j);
+        j++;
+        k++;
+    }
+    cout << "Tablica C" <<endl;
+    for (int a=0; a<o; a++)
+    {
+        cout<< *(C+a) << " ";
+    }
+
+
+
+    delete []A;
+    delete []B;
+    delete []C;
 
 
 
